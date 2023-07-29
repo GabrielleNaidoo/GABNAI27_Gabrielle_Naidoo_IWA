@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/IWA-1/style.css" />
-    <!-- Load the JavaScript and runs it. -->
+    <!-- Load the JavaScript and runs it. It is common to name you JS file "script"/"scripts". The defer attribute tells the browser to load the HTML first before running the JavaScript. -->
+
+    <!-- default: stops everything to load the js -->
+    <!-- defer: downloads and parse it, and only runs once html is ready -->
+    <!-- async: downloads and parse it, and runs immediately in background -->
     <script src="/IWA-1/script.js" defer></script>
     <title>Tally Count</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +22,9 @@
     <header>
       <h1 class="header_title">Tally Count</h1>
     </header>
+    <noscript>
+      <p class="error">This web app requires JavaScript to work!</p>
+    </noscript>
     <!-- <aside class="controls">
       <label>
         <span>Display</span>

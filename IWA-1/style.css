@@ -1,5 +1,7 @@
 :root {
   --color-green: #31c48d;
+  --color-red-light: #f2dede;
+  --color-red-dark: #a94442;
   --color-white: #ffffff;
   --color-dark-grey: #33333d;
   --color-medium-grey: #424250;
@@ -22,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
 }
 
@@ -44,6 +47,7 @@ header {
 /* counter */
 .counter {
   background: var(--color-dark-grey);
+  max-width: 30rem;
 }
 
 .counter_value {
@@ -97,4 +101,11 @@ header {
 
 .footer_link {
   color: var(--color-white);
+}
+
+/* Error */
+.error {
+  background: var(--color-red-light);
+  color: var(--color-red-dark);
+  padding: 2rem;
 }
