@@ -1,6 +1,6 @@
 const date = 2050;
 let count = 0;
-const role = "student";
+const role = "parent";
 
 console.log("January: New Year’s Day");
 console.log("March: Human Rights Day");
