@@ -14,7 +14,7 @@ let shirts = 150 * NONE_SELECTED;
 let batteries = 35 * 2;
 let pens = 5 * NONE_SELECTED;
 let totalWithoutShipping = shoes + toys + shirts + batteries + pens;
-console.log(totalWithoutShipping);
+// console.log(totalWithoutShipping);
 
 if (country === "RSA") {
   currency = "R";
