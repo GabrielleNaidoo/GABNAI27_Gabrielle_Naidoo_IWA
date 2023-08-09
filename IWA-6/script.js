@@ -1,30 +1,30 @@
 //Challenge 1 :
 
 /*****Attempt 1:*****/
-const primaryPhone = "O748105141";
-const secondaryPhone = "0219131568";
-
-//Can also create a separate variable and parseInt primaryPhone and secondaryPhone variables before validating.
-
-const primaryValid = parseInt(primaryPhone) + 0 === parseInt(primaryPhone);
-const secondaryValid =
-  parseInt(secondaryPhone) + 0 === parseInt(secondaryPhone);
-
-console.log("Primary phone is valid numerical string:", primaryValid);
-console.log("Secondary phone is valid numerical string:", secondaryValid);
-
-/*****Attempt 2:*****/
 // const primaryPhone = "O748105141";
 // const secondaryPhone = "0219131568";
 
-// const primaryNumber = parseInt(primaryPhone);
-// const secondaryNumber = parseInt(secondaryPhone);
+// //Can also create a separate variable and parseInt primaryPhone and secondaryPhone variables before validating.
 
-// const primaryValid = isNaN(primaryNumber) === false;
-// const secondaryValid = isNaN(secondaryNumber) === false;
+// const primaryValid = parseInt(primaryPhone) + 0 === parseInt(primaryPhone);
+// const secondaryValid =
+//   parseInt(secondaryPhone) + 0 === parseInt(secondaryPhone);
 
 // console.log("Primary phone is valid numerical string:", primaryValid);
 // console.log("Secondary phone is valid numerical string:", secondaryValid);
+
+/*****Attempt 2:*****/
+const primaryPhone = "O748105141";
+const secondaryPhone = "0219131568";
+
+const primaryNumber = parseInt(primaryPhone);
+const secondaryNumber = parseInt(secondaryPhone);
+
+const primaryValid = !isNaN(primaryNumber);
+const secondaryValid = !isNaN(secondaryNumber);
+
+console.log("Primary phone is valid numerical string:", primaryValid);
+console.log("Secondary phone is valid numerical string:", secondaryValid);
 
 /**************************************************************************************************** */
 
