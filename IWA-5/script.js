@@ -3,7 +3,7 @@ const BANNED_WARNING =
   "Unfortunately we do not ship to your country of residence";
 const NONE_SELECTED = 0;
 
-let customers = 5;
+let customers = 1;
 let country = "RSA";
 let shipping = null;
 let currency = null;
@@ -14,13 +14,13 @@ let shirts = 150 * NONE_SELECTED;
 let batteries = 35 * 2;
 let pens = 5 * NONE_SELECTED;
 let totalWithoutShipping = shoes + toys + shirts + batteries + pens;
-// console.log(totalWithoutShipping);
+console.log(totalWithoutShipping);
 
 if (country === "RSA") {
   currency = "R";
-  if (totalWithoutShipping > 1000 && customers === 1) {
+  if (totalWithoutShipping >= 1000 && customers === 1) {
     shipping = 0;
-  } else if (totalWithoutShipping > 1000 && customers !== 1) {
+  } else if (totalWithoutShipping >= 1000 && customers !== 1) {
     shipping = 400;
     console.log(FREE_WARNING);
   } else {
@@ -29,9 +29,9 @@ if (country === "RSA") {
   console.log(`price: ${currency}${totalWithoutShipping + shipping}`);
 } else if (country === "NAM") {
   currency = "$";
-  if (totalWithoutShipping > 60 && customers === 1) {
+  if (totalWithoutShipping >= 60 && customers === 1) {
     shipping = 0;
-  } else if (totalWithoutShipping > 60 && customers !== 1) {
+  } else if (totalWithoutShipping >= 60 && customers !== 1) {
     shipping = 600;
     console.log(FREE_WARNING);
   } else {

@@ -23,6 +23,9 @@ const secondaryNumber = parseInt(secondaryPhone);
 const primaryValid = !isNaN(primaryNumber);
 const secondaryValid = !isNaN(secondaryNumber);
 
+// const primaryValid = Boolean(primaryNumber);
+// const secondaryValid = Boolean(secondaryNumber);
+
 console.log("Primary phone is valid numerical string:", primaryValid);
 console.log("Secondary phone is valid numerical string:", secondaryValid);
 
@@ -34,16 +37,16 @@ const tax = "8%";
 const food = 51.7501;
 const salary = 800;
 const transport = 10.2;
-const hourOfDay = 00;
-const minuteOfDay = 00;
+const hourOfDay = 0;
+const minuteOfDay = 0;
 
 // Only change below this line
 
 if (
-  hourOfDay !== null &&
-  minuteOfDay !== null &&
-  hourOfDay !== undefined &&
-  minuteOfDay !== undefined &&
+  // hourOfDay !== null &&
+  // minuteOfDay !== null &&
+  // hourOfDay !== undefined &&
+  // minuteOfDay !== undefined &&
   hourOfDay == "00" &&
   minuteOfDay == "00"
 ) {
