@@ -50,7 +50,7 @@ if (
   hourOfDay == "00" &&
   minuteOfDay == "00"
 ) {
-  const taxAsDecimal = parseInt(tax) / "100";
+  const taxAsDecimal = parseInt(tax) / 100;
   const startingAfterTax = salary - salary * taxAsDecimal;
   const balance = startingAfterTax - transport - food - rent;
   console.log(`R${balance.toFixed(2)}`);
