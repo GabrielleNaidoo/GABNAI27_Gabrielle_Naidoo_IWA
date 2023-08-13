@@ -36,13 +36,13 @@ const combinedBalance = parseFloat(leoBalance) + parseFloat(sarahBalance);
 
 const owed = `R${-1 * combinedBalance.toFixed(2)}`;
 console.log(owed);
-const leo = `${leoName} ${leoSurname.trim()} (Owed: R ${parseFloat(
-  leoBalance
-)})`;
+const leo = `${leoName} ${leoSurname.trim()} (Owed: R ${
+  parseFloat(leoBalance) * -1
+})`;
 
-const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${parseFloat(
-  sarahBalance
-)})`;
+const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${
+  parseFloat(sarahBalance) * -1
+})`;
 const total = "Total amount owed: ";
 const result = `${leo}\n${sarah}\n\n${divider}\n\t${total}${owed}\n${divider}`;
 
