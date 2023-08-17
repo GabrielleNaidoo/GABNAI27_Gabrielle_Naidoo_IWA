@@ -4,7 +4,7 @@ const holidays = {
   0: {
     id: 0,
     name: "Day of Reconciliation",
-    date: `16 December ${currentYear}`,
+    date: new Date(`16 December ${currentYear}`),
   },
   1: {
     id: 1,
@@ -63,21 +63,13 @@ const correctDate = new Date(`25 December ${currentYear}`); // Fix of date in co
 const isEarlier = correctDate.getTime() < holidays[christmas].date.getTime(); // Check before confirming
 console.log("New date is earlier:", isEarlier);
 if (isEarlier) copied.date = correctDate;
-console.log(correctDate);
 /******************************************************************************************/
-
 console.log(
   `ID change: ${!(holidays[christmas].id === copied.id) && copied.id}`
 );
 console.log(
   `Name change: ${!(holidays[christmas].name === copied.name) && copied.name}`
 );
-
-// console.log(
-//   `Date change: ${
-//     !(holidays[christmas].date === copied.date) && copied.date.getDate() / copied.date.getMonth() / copied.date.getFullYear()
-//   }`
-// );
 
 console.log(
   holidays[christmas].date === copied.date
@@ -90,42 +82,58 @@ console.log(
         copied.date.getFullYear()
 );
 
+holidays[christmas].name = copied.name;
+holidays[christmas].date = correctDate;
 /*******************************************************************************************/
 
-console.log(holidays["0"].date.getMonth());
-
 const firstHolidayTimestamp = Math.min(
-  holidays["0"].date,
-  holidays["1"].date,
-  holidays["2"].date,
-  holidays["3"].date,
-  holidays["4"].date,
-  holidays["5"].date,
-  holidays["6"].date,
-  holidays["7"].date,
-  holidays["8"].date
+  holidays["0"].date.getTime(),
+  holidays["1"].date.getTime(),
+  holidays["2"].date.getTime(),
+  holidays["3"].date.getTime(),
+  holidays["4"].date.getTime(),
+  holidays["5"].date.getTime(),
+  holidays["6"].date.getTime(),
+  holidays["7"].date.getTime(),
+  holidays["8"].date.getTime()
 );
-console.log(firstHolidayTimestamp);
 
-// const lastHolidayTimestamp = Math.max(
-//   holidays[0].date.getTime,
-//   holidays[1].date.getTime,
-//   holidays[2].date.getTime,
-//   holidays[3].date.getTime,
-//   holidays[4].date.getTime,
-//   holidays[5].date.getTime,
-//   holidays[6].date.getTime,
-//   holidays[7].date.getTime,
-//   holidays[8].date.getTime
-// );
+const lastHolidayTimestamp = Math.max(
+  holidays["0"].date.getTime(),
+  holidays["1"].date.getTime(),
+  holidays["2"].date.getTime(),
+  holidays["3"].date.getTime(),
+  holidays["4"].date.getTime(),
+  holidays["5"].date.getTime(),
+  holidays["6"].date.getTime(),
+  holidays["7"].date.getTime(),
+  holidays["8"].date.getTime()
+);
 
-// const firstDay = firstHolidayTimestamp.getDate;
-// const firstMonth = firstHolidayTimestamp.getMonth;
-// const lastDay = lastHolidayTimestamp.getDate;
-// const lastMonth = lastHolidayTimestamp.getMonth;
+const firstDay = new Date(firstHolidayTimestamp).getDate();
+const firstMonth = new Date(firstHolidayTimestamp).getMonth() + 1;
+const lastDay = new Date(lastHolidayTimestamp).getDate();
+const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1;
 
-// console.log("{firstDay}/{firstMonth}/{currentYear}");
-// console.log("{lastDay}/{lastMonth}/{currentYear}");
+console.log(
+  `${firstDay.toString().padStart(2, "0")}/${firstMonth
+    .toString()
+    .padStart(2, "0")}/${currentYear}`
+);
+console.log(
+  `${lastDay.toString().padStart(2, "0")}/${lastMonth
+    .toString()
+    .padStart(2, "0")}/${currentYear}`
+);
 
-// const randomHoliday = holidays[Math.random];
-// console.log(randomHoliday.date);
+/***************************************************************************************************** */
+const randomHoliday = holidays[Math.trunc(Math.random() * 8)];
+console.log(
+  `${randomHoliday.date
+    .getDate()
+    .toString()
+    .padStart(2, "0")}/${randomHoliday.date
+    .getMonth()
+    .toString()
+    .padStart(2, "0")}/${randomHoliday.date.getFullYear()}`
+);
