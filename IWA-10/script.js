@@ -130,22 +130,17 @@ console.log(
 );
 
 /***************************************************************************************************** */
-
 const randomHoliday = holidays[Math.trunc(Math.random() * 8)];
 console.log(
   randomHoliday === holidays[0]
-    ? `${new Date(randomHoliday.date)
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${new Date(randomHoliday.date)
-        .getMonth()
+    ? `${new Date(randomHoliday.date).getDate().toString().padStart(2, "0")}/${(
+        new Date(randomHoliday.date).getMonth() + 1
+      )
         .toString()
         .padStart(2, "0")}/${new Date(randomHoliday.date).getFullYear()}`
-    : `${randomHoliday.date
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${randomHoliday.date
-        .getMonth()
+    : `${randomHoliday.date.getDate().toString().padStart(2, "0")}/${(
+        randomHoliday.date.getMonth() + 1
+      )
         .toString()
         .padStart(2, "0")}/${randomHoliday.date.getFullYear()}`
 );
