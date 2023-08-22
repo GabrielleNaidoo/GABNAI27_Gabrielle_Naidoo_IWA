@@ -4,7 +4,7 @@ const holidays = {
   0: {
     id: 0,
     name: "Day of Reconciliation",
-    date: new Date(`16 December ${currentYear}`),
+    date: `16 December ${currentYear}`,
   },
   1: {
     id: 1,
@@ -60,6 +60,9 @@ console.log(
 const copied = Object.assign({}, holidays[christmas]); // Used Object.assign to merge an empty object and holidays object to create copied object so that changes can be made to it without affecting the holidays object.
 copied.name = "X-mas Day";
 const correctDate = new Date(`25 December ${currentYear}`); // Fix of date in copied object stored in variable before being confirmed
+/*const correctDate=copied.id
+correctDate.setHours(0)
+correctDate.setMinutes(0)*/
 const isEarlier = correctDate.getTime() < holidays[christmas].date.getTime(); // Check before confirming
 console.log("New date is earlier:", isEarlier);
 if (isEarlier) copied.date = correctDate;
@@ -87,7 +90,7 @@ holidays[christmas].date = correctDate;
 /*******************************************************************************************/
 
 const firstHolidayTimestamp = Math.min(
-  holidays["0"].date.getTime(),
+  new Date(holidays["0"].date).getTime(),
   holidays["1"].date.getTime(),
   holidays["2"].date.getTime(),
   holidays["3"].date.getTime(),
@@ -99,7 +102,7 @@ const firstHolidayTimestamp = Math.min(
 );
 
 const lastHolidayTimestamp = Math.max(
-  holidays["0"].date.getTime(),
+  new Date(holidays["0"].date).getTime(),
   holidays["1"].date.getTime(),
   holidays["2"].date.getTime(),
   holidays["3"].date.getTime(),
@@ -127,13 +130,22 @@ console.log(
 );
 
 /***************************************************************************************************** */
+
 const randomHoliday = holidays[Math.trunc(Math.random() * 8)];
 console.log(
-  `${randomHoliday.date
-    .getDate()
-    .toString()
-    .padStart(2, "0")}/${randomHoliday.date
-    .getMonth()
-    .toString()
-    .padStart(2, "0")}/${randomHoliday.date.getFullYear()}`
+  randomHoliday === holidays[0]
+    ? `${new Date(randomHoliday.date)
+        .getDate()
+        .toString()
+        .padStart(2, "0")}/${new Date(randomHoliday.date)
+        .getMonth()
+        .toString()
+        .padStart(2, "0")}/${new Date(randomHoliday.date).getFullYear()}`
+    : `${randomHoliday.date
+        .getDate()
+        .toString()
+        .padStart(2, "0")}/${randomHoliday.date
+        .getMonth()
+        .toString()
+        .padStart(2, "0")}/${randomHoliday.date.getFullYear()}`
 );
