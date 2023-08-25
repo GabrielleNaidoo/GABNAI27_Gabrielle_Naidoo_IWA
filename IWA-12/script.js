@@ -27,7 +27,7 @@ const STATUS_MAP = {
 
 // Edit below line
 
-// Color porperty for all buttons
+// Color property for all buttons
 const buttons = document.getElementsByTagName("button");
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].style.color = "";
@@ -55,21 +55,6 @@ let book3Checkout = book3.getElementsByClassName("checkout")[0];
 let book3Checkin = book3.getElementsByClassName("checkin")[0];
 
 /********************************************** */
-
-// let disableOrEnable = function (
-//   bookStatusNumber,
-//   statusNameNumber,
-//   bookReserveNumber
-// ) {
-//   let statusNameNumber = bookStatusNumber.textContent;
-//   bookStatusNumber.style.color = STATUS_MAP[statusNameNumber].color;
-//   bookReserveNumber = STATUS_MAP[statusNameNumber].canReserve
-//     ? (bookReserveNumber.disabled = true)
-//     : (bookReserveNumber.disabled = false);
-// };
-// disableOrEnable();
-// disableOrEnable(book1Status, statusName1, book1Reserve);
-
 const statusName1 = book1Status.textContent;
 book1Status.style.color = STATUS_MAP[statusName1].color;
 book1Reserve = STATUS_MAP[statusName1].canReserve
@@ -114,3 +99,17 @@ book3Checkin = STATUS_MAP[statusName3].canCheckin
   -Use this variable as an input in the square brackets when accessing the corresponding color in the STATUS_MAP object.
   Use .disabled=true/false, to correspond to each of the canReserve/Checkout/Checkin properties
    -*/
+
+// let disableOrEnable = function (
+//   bookStatusNumber,
+//   statusNameNumber,
+//   bookReserveNumber
+// ) {
+//   let statusNameNumber = bookStatusNumber.textContent;
+//   bookStatusNumber.style.color = STATUS_MAP[statusNameNumber].color;
+//   bookReserveNumber = STATUS_MAP[statusNameNumber].canReserve
+//     ? (bookReserveNumber.disabled = true)
+//     : (bookReserveNumber.disabled = false);
+// };
+// disableOrEnable();
+// disableOrEnable(book1Status, statusName1, book1Reserve);
