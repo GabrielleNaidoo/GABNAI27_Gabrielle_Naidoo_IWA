@@ -71,3 +71,11 @@ const example2 = {
 
 example1.calculate();
 example2.calculate();
+
+/*Changes:
+-Change all functions from arrow functions to function declarations
+-Fix syntax in all function declarations
+-Change minus sign ot multiplication sign in the multiply function
+-Change parameters in multiply function to include c, and change the operation to get the result shown on LMS
+-use this keyword to access the example Objects and use the nested internal object's properties to perform the operations in the add and multiply functions
+-return and log the mulitplied value to get the result required by LMS */
