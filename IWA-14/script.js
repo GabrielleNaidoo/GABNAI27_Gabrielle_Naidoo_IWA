@@ -18,7 +18,8 @@ hobbyString();
 /*Changes made:
 -Addition of const to assign variables
 -Put "parameter" as a parameter inside the logTwice arrow function
--correct syntax error fo rconsole.log inside the logTwice function
+-correct syntax error fo console.log inside the logTwice function
+-change name to firstName 
 -Change hobby function name to hobbyString to get rid of naming conflicts
 */
 
@@ -40,9 +41,9 @@ function internal() {
     this.internal.b,
     this.internal.c
   );
-  const result = multiplied;
-  console.log(result);
-  return result;
+
+  console.log(multiplied);
+  return multiplied;
 }
 
 // Not allowed to change below this

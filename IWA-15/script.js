@@ -8,9 +8,9 @@ const data = {
 
 // Only edit below
 
-const [, first = 1] = data.lists[0] || {};
-const [, second = 1] = data.lists[1] || {};
-const [, third = 1] = data.lists[2] || {};
+const [, first = 1] = data.lists[0] || [];
+const [, second = 1] = data.lists[1] || [];
+const [, third = 1] = data.lists[2] || [];
 // console.log(first);
 
 const result = [];
@@ -79,3 +79,19 @@ console.log(result);
  -firstOther.length<1 and secondOther.length<1 (Both empty arrays)
 - Make the selected element return whenever the function is called
 - use the pop method to remove it from the array*/
+
+/*Alt way for if statements:
+if (firstLast > secondLast && firstLast > thirdLast) {
+		first.pop()
+		return firstLast
+	}
+
+	if (secondLast > thirdLast) {
+		second.pop()
+		return secondLast
+	}
+	
+	third.pop()
+	return thirdLast
+}
+*/
